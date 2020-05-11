@@ -1,0 +1,22 @@
+<span class='component title'>[{{title}}]</span>
+<span>+</span>
+<table *ngIf="actors" class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Birth Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let actor of actors">
+        <td>{{ actor.id }}</td>
+        <td>{{ actor.firstName }}</td>
+        <td>{{ actor.lastName }}</td>
+        <td>{{ actor.gender }}</td>
+        <td>{{ actor.birthDate }}</td>
+    </tr>
+    </tbody>
+</table>
