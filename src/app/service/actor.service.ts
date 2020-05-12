@@ -26,8 +26,8 @@ export class ActorService {
   edit(actor: Actor): Observable<JsonResponse> {
     return this.http.put(url, actor) as Observable<JsonResponse>;
   }
-  delet(id: number): Observable<JsonResponse> {
-    return this.http.get(url+id) as Observable<JsonResponse>;
+  delete(id: number): Observable<JsonResponse> {
+    return this.http.delete(url+id) as Observable<JsonResponse>;
   }
 
 }

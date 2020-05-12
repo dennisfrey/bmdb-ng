@@ -13,4 +13,7 @@ export class Movie {
         this.director = director;
 
     }
+    about(){
+        return `Movie Details: id=${this.id}, title=${this.title}, rating=${this.rating}, year=${this.year}, director=${this.director}.`;
+    }
 }
