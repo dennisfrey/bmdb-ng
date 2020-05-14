@@ -33,3 +33,33 @@
         <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
     </span>
 </div>
+<br>
+<section class="heading">
+    <span class="page-title font-weight-bold font-italic">[{{creditsTitle}}]</span>
+</section>
+<table *ngIf="credits" class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Actor</th>
+            <th>Movie</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let credit of credits">
+            <td>{{ credit.id }}</td>
+            <td>
+                   {{ credit.actor.firstName }}&nbsp;{{ credit.actor.lastName }}
+            </td>
+
+            <td>
+                <span>
+                    <a routerLink="/movie/detail/{{credit.movie.id}}">{{ credit.movie.title }} </a>
+                </span>
+            </td>
+
+            <td>{{ credit.role }}</td>
+        </tr>
+    </tbody>
+</table>

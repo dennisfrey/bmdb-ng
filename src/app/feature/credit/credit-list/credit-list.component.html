@@ -14,18 +14,28 @@
     </thead>
     <tbody>
         <tr *ngFor="let credit of credits">
-        <td>{{ credit.id }}</td>
-        <td>{{ credit.actor.firstName }}&nbsp;{{ credit.actor.lastName }}</td>
-        <td>{{ credit.movie.title }}</td>
-        <td>{{ credit.role }}</td>
-        <td>
-            <a routerLink='/credit/detail/{{credit.id}}'>
-                <img width='20' height='20' src='assets/details.png' title='Credit Details'>
-            </a> |
-            <a routerLink='/credit/edit/{{credit.id}}'>
-                <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Credit'>
-            </a>
-        </td>
-    </tr>
+            <td>{{ credit.id }}</td>
+            <td>
+                <span>
+                    <a routerLink="/actor/detail/{{credit.actor.id}}">{{ credit.actor.firstName }}&nbsp;{{ credit.actor.lastName }}</a>
+                </span>
+            </td>
+
+            <td>
+                <span>
+                    <a routerLink="/movie/detail/{{credit.movie.id}}">{{ credit.movie.title }} </a>
+                </span>
+            </td>
+
+            <td>{{ credit.role }}</td>
+            <td>
+                <a routerLink='/credit/detail/{{credit.id}}'>
+                    <img width='20' height='20' src='assets/details.png' title='Credit Details'>
+                </a> |
+                <a routerLink='/credit/edit/{{credit.id}}'>
+                    <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Credit'>
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>

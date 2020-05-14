@@ -1,1 +1,34 @@
-<p>credit-create works!</p>
+<div *ngIf="credit" class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/credit/list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>Actor:</td>
+                <td>
+                    <select [(ngModel)]="credit.actor" class="rounded">
+                        <option *ngFor = "let actor of actors" [ngValue]='actor'>{{actor.firstName+" "+actor.lastName}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Movie:</td>
+                               <td>
+                    <select [(ngModel)]="credit.movie" class="rounded">
+                        <option *ngFor = "let movie of movies" [ngValue]='movie'>{{movie.title}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Role:</td>
+                <td><input [(ngModel)]="credit.role" class="rounded" type="text"></td>
+            </tr>
+
+        </table>
+    </main>
+    <span>
+        <span> | <button (click)="create()" class="btn btn-sm btn-primary">Create</button></span>
+    </span>
+</div>

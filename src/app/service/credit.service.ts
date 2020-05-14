@@ -6,6 +6,8 @@ import { Credit } from '../model/credit.class';
 
 
 const url: string = "http://localhost:8080/credits/";
+const urlByActor: string = "find-by-actor/"
+const urlByMovie: string = "find-by-movie/"
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +31,12 @@ export class CreditService {
   delete(id: number): Observable<JsonResponse>{
     return this.http.delete(url+id) as Observable<JsonResponse>;
   }
+
+  listCreditsByActor(id: number): Observable<JsonResponse>{
+    return this.http.get(url + urlByActor + id) as Observable<JsonResponse>;
+  }
+  listCreditsByMovie(id: number): Observable<JsonResponse>{
+    return this.http.get(url + urlByMovie + id) as Observable<JsonResponse>;
+  }
+
 }
